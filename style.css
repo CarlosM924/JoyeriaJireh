@@ -1,0 +1,624 @@
+/* Estilos generales */
+
+* {
+	padding:0;
+	margin:0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Estilos del cuerpo */
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(fondo5.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+div p{
+font-family:Imprint MT Shadow;
+text-justify: center;
+color: black;
+}
+
+h1,h2{
+  font-family: forte;
+  color: black;
+}
+
+.tprincipal{
+  font-size: 80px;
+  font-family: Forte;
+  color: black;
+}
+
+/* Estilos del menu*/
+
+.menu_bar {
+	display:none;
+  z-index: 100;
+}
+
+header {
+	width: 100%;
+}
+
+header nav {
+	background:black;
+	z-index:1000;
+	max-width: 1000px;
+	width:95%;
+	margin:20px auto;
+}
+
+header nav ul {
+	list-style:none;
+}
+
+header nav ul li {
+	display:inline-block;
+	position: relative;
+}
+
+header nav ul li:hover {
+	background:#00f7c280;
+}
+
+header nav ul li a {
+	color:#fff;
+	display:block;
+	text-decoration:none;
+	padding: 20px;
+}
+
+header nav ul li a span {
+	margin-right:10px;
+}
+
+header nav ul li:hover .children {
+	display:block;
+}
+
+header nav ul li .children {
+	display: none;
+	background:black;
+	position: absolute;
+	width: 150%;
+	z-index:1000;
+}
+
+header nav ul li .children li {
+	display:block;
+	overflow: hidden;
+	border-bottom: 1px solid rgba(255,255,255,.5);
+}
+
+header nav ul li .children li a {
+	display: block;
+}
+
+header nav ul li .children li a span {
+	float: right;
+	position: relative;
+	top:3px;
+	margin-right:0;
+	margin-left:10px;
+}
+
+header nav ul li .caret {
+	position: relative;
+	top:3px;
+	margin-left:10px;
+	margin-right:0px;
+}
+
+@media screen and (max-width: 800px) {
+	body {
+		padding-top:80px;
+	}
+
+	.menu_bar {
+		display:block;
+		width:100%;
+		position: fixed;
+		top:0;
+		background:black;
+	}
+
+	.menu_bar .bt-menu {
+		display: block;
+		padding: 20px;
+		color: #fff;
+		overflow: hidden;
+		font-size: 25px;
+		font-weight: bold;
+		text-decoration: none;
+	}
+
+	.menu_bar span {
+		float: right;
+		font-size: 40px;
+	}
+
+	header nav {
+		width: 80%;
+		height: calc(100% - 80px);
+		position: fixed;
+		right:100%;
+		margin: 0;
+		overflow: scroll;
+	}
+
+	header nav ul li {
+		display: block;
+		border-bottom:1px solid rgba(6, 252, 231, 0.5);
+	}
+
+	header nav ul li a {
+		display: block;
+	}
+
+	header nav ul li:hover .children {
+		display: none;
+	}
+
+	header nav ul li .children {
+		width: 100%;
+		position: relative;
+	}
+
+	header nav ul li .children li a {
+		margin-left:20px;
+	}
+
+	header nav ul li .caret {
+		float: right;
+	}
+}
+
+
+
+   
+  
+    /* Estilos del formulario  */
+
+ 
+.nos{
+      text-align: center ;
+       font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    }
+    .pr{
+      font-family:monospace ;
+      font-size: 25px;
+      background-color: rgba(0, 0, 0, 0.2);
+      width: 800px;
+      position: relative;
+      left: 300px;
+      border-radius: 5px;
+    }
+
+
+
+
+/*Carrusel */
+
+
+.destacado{
+  border-radius: 20px;
+}
+
+
+/* estilos targetas(producto)*/
+
+ .tanillo{
+  text-align: center;
+  width: 100%;
+ }
+
+ .card h2{
+  font-family: verdana;
+ }
+
+  .card{
+    position:relative;
+    width: 300px;
+    height: 350px;
+    margin:16px;
+  }
+
+  .card .face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+  }
+
+  .card .front{
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px black;
+
+  }
+
+  .card .front img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card .front  h3{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color:white;
+    background: rgba(0, 0, 0, .4);
+    text-align: center;
+  }
+
+  .card .back{
+    transform: perspective(600px) rotateY(180deg);
+    background:rgb(26, 25, 25);
+    padding: 15px;
+    color:white;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px black;
+  }
+
+  .card:hover .front{
+    transform: perspective(600px) rotateY(180deg);
+  }
+
+  .card:hover .back{
+    transform: perspective(600px) rotateY(360deg);
+  }
+
+  .productoscontainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+/* estilos del formulario */
+.form{
+      position: relative;
+      
+      padding: 60px 15px;
+      width: 370px;
+      height: 650px;
+      background: transparent;
+      overflow: hidden;
+      box-shadow: 0px 0px 10px 0px rgb(116, 119, 114);
+      border-radius: 5px;
+    }
+
+    .form-inner{
+      position: absolute;
+      height: 98%;
+      width: 98%;
+      top: 50%;
+      left: 50%;
+      background: transparent;
+      transform: translate(-50%, -50%);
+    }
+
+    .content{
+      height: 100%;
+      width: 100%;
+      padding: 25px;
+    }
+
+    .form-inner h2{
+      font-size: 25px;
+      color: blue;
+      text-align: center;
+      padding-top: 35px;
+    }
+
+    .input{
+      display: block;
+      padding: 12px 15px;
+      width: 100%;
+      left: 50%;
+      border-radius: 10px;
+      margin-top: 20px;
+      border: 1.5px solid rgb(6, 197, 240);
+      outline: none;
+      background: #191919;
+      color: aliceblue;
+    }
+
+    .input:hover{
+      background: rgb(6, 197, 240);
+    }
+
+    .btn{
+      cursor: pointer;
+      color: aliceblue;
+      margin-top: 40px;
+      width: 100%;
+      padding: 12px;
+      outline: none;
+      background: #003c80;
+      border: none;
+      font-size: 18px;
+      border-radius: 10px;
+      transition: 0.4s;
+    }
+    .bnt:hover{
+      background: rgb(6, 197, 240);
+    }
+    .form span{
+      position: absolute;
+      height: 50%;
+      width: 50%;
+    }
+    .form span:nth-child(1){
+      background: #24c70f95;
+      top: 0px;
+      left: -48%;
+      animation: 3s span1 infinite linear;
+      animation-delay: 1s;
+    }
+    .form span:nth-child(2){
+      background: #24c70f95;
+      bottom: 0px;
+      right: -48%;
+      animation: 4s span2 infinite linear;
+    }
+    .form span:nth-child(3){
+      background: #24c70f95;
+      right: -48%;
+      animation: 4s span3 infinite linear;
+    }
+    .form span:nth-child(4){
+      background: #24c70f95;
+      right: -48%;
+      animation: 4s span4 infinite linear;
+      animation-delay: 1s;
+    }
+    @keyframes span1 {
+      0%{
+        top: -48%;
+        left: -48%;
+      }
+      25%{
+        top: -48%;
+        left: 98%;
+      }
+      50%{
+        top: 98%;
+        left: 98%;
+      }
+      75%{
+        top: 98%;
+        left: -48%;
+      }
+      100%{
+        top: -48%;
+        left: -48%;
+      }
+    }
+    @keyframes span2{
+      0%{
+        top: -48%;
+        left: -48%;
+      }
+      25%{
+        top: -48%;
+        left: 98%;
+      }
+      50%{
+        top: 98%;
+        left: 98%;
+      }
+      75%{
+        top: 98%;
+        left: -48%;
+      }
+      100%{
+        top: -48%;
+        left: -48%;
+      }
+    }
+    @keyframes span3{
+      0%{
+        top: -48%;
+        left: -48%;
+      }
+      25%{
+        top: -48%;
+        left: 98%;
+      }
+      50%{
+        top: 98%;
+        left: 98%;
+      }
+      75%{
+        top: 98%;
+        left: -48%;
+      }
+      100%{
+        top: -48%;
+        left: -48%;
+      }
+    }
+    @keyframes span4{
+      0%{
+        top: -48%;
+        left: -48%;
+      }
+      25%{
+        top: -48%;
+        left: 98%;
+      }
+      50%{
+        top: 98%;
+        left: 98%;
+      }
+      75%{
+        top: 98%;
+        left: -48%;
+      }
+      100%{
+        top: -48%;
+        left: -48%;
+      }
+    }
+
+   
+
+    
+
+
+   .card2{
+    width: 310px;
+    height: 350px;
+    display: flex;
+    float: left;
+   }
+
+   /* estilos de nosotros */
+
+   .how-section1{
+    margin-top:-10%;
+    padding: 5%;
+}
+.how-section1 h3{
+    color: #026b5d;
+    font-weight: bold;
+    font-size: 40px;
+}
+.how-section1 .subheading{
+    color: #3931af;
+    font-size: 20px;
+}
+.how-section1 .row
+{
+    margin-top: 10%;
+}
+.how-img 
+{
+    text-align: center;
+}
+.how-img img{
+    width: 60%;
+}
+
+/* estilos del footer */
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+
+.footer{
+  background-color: #242628;
+  padding: 80px 0;
+}
+
+.footer-row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-links{
+  width: 25%;
+  padding: 0 15px;
+}
+
+.footer-links h4{
+  font-size: 20px;
+  color: #FFFFFF;
+  margin-bottom: 25px;
+  font-weight: 500;
+  border-bottom: 2px solid #00C3FF;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.footer-links ul li a {
+  font-size: 18px;
+  text-decoration: none;
+  color: #BBBBBB;
+  display: block;
+  margin-bottom: 15px;
+  transition: all .3s ease;
+
+}
+
+.footer-links ul li a:hover{
+  color:#FFFFFF;
+  padding-left: 6px;
+}
+
+
+.social-link a{
+
+  display: inline-block;
+  min-height: 40px;
+  width: 40px;
+  background-color: rgb(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color:#FFFFFF;
+  transition:all .5s ease;
+
+}
+
+.social-link a:hover{
+  background-color: #00C3FF;
+}
+
+
+
+
+
+
+@media(max-width:991px){
+  .footer-row{
+      text-align: center;
+  }
+
+  .footer-links{
+
+      width: 100%;
+      margin-bottom: 30px;
+  }
+}
+
+   /* Estiloa de muestras del inicio*/
+
+
+   .apedidoimg{
+    padding: 10px;
+   }
+
+   .apedidoimg img{
+    width: 100%;
+    height: 250px;
+    border-radius: 70px;
+    
+   }
+   .apedidoimg img:hover{
+    box-shadow:
+       inset 0 -3em 3em rgba(0, 255, 242, 0.329),
+             0 0 0 10px rgba(0, 212, 166, 0.719),
+             0.3em 0.3em 1em rgba(3, 253, 199, 0.3);
+   }
+   
